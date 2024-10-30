@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+:root{
+    --primary-color: rgb(214, 161, 27);
+    --secondary-color: silver;
+    --primary-background-color: black;
+    --secondary-background-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body, html {
+    background-color: var(--primary-background-color);
+    color: var(--secondary-color);
+    overflow: hidden;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    z-index: 1000;
+}
+
+.sections {
+    scroll-snap-type: y mandatory !important;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.content-box {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 25px;
+    min-height: 80vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-box img.content-box-header {
+    width: 100%;
+    object-fit: contain;
+}
+
+.content-box img.content-box-footer {
+    width: 100%;
+    object-fit: contain;
+}
+
+.title {
+    color: var(--primary-color);
+    margin: 20px 0;
+    font-family: 'Great Vibes', cursive;
+}
+
+.title-glowing {
+    background: linear-gradient(45deg, var(--primary-color), #dcb248);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+    0 0 5px rgba(218, 165, 32, 0.6), /* Outer soft glow */
+        0 0 10px rgba(218, 165, 32, 0.4), 
+        0 0 15px rgba(218, 165, 32, 0.3), 
+        0 0 20px rgba(255, 227, 67, 0.5); /* Stronger gold glow */
+}
+
+p {
+    text-align: center;
+    text-wrap: wrap;
+}
+
+h1 {
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+h4 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h5 {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+h6 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+small {
+    width: 100%;
+    text-align: center;
+}
+
+.arabic {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.translation {
+    font-size: 1.2rem;
+}
+
+.main-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.main-image {
+    width: 40vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.another-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.another-image {
+    width: 20vw;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.day, .month, .day-number, .year {
+    color: var(--primary-text-color);
+}
+
+.day, .month {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day-number {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.year {
+    font-size: 1em;
+}
+
+.time {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.location-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    margin-top: 10px;
+}
+
+.location {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 5px;
+}
+
+.map-location {
+    width: 80vw;
+    height: 50vh;
+    border-radius: 25px;
+}
+
+.envelope-button {
+    background-color: var(--secondary-color);
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.envelope-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.bank-logo img{
+    width: 25vw;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bank-detail {
+    font-size: 20px;
+}
+
+.wa-confirm {
+    border: none;
+    font-size: 1.2rem;
+    background-color: aquamarine;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+form {
+    width: 100%;
+}
+
+input, textarea {
+    width: calc(100% - 2em);
+    padding: 1em;
+    margin: 0.5em 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-background-color);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-left: auto; /* Mengatur ke tengah */
+    margin-right: auto; /* Mengatur ke tengah */
+}
+
+form button {
+    padding: 0.8em 2em;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0.5em auto; /* Mengatur ke tengah */
+}
+
+.messages {
+    margin: 20px 0;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.messages-detail {
+    margin: 20px 0;
+}
+
+.image-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.popup-img {
+    width: 80vw;
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* Responsive Design for Mobile Only */
+@media (min-width: 768px) {
+    #sections {
+        display: none;
+    }
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/marriage/{id}/{bride}/{guest}', [Controller::class, 'index']);
+Route::get('/marriage/generate_guest/{id}/{bride}', [Controller::class, 'generate_guest']);

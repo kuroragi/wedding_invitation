@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    {{ $slot }}
+    @yield('content')
 
     @livewireScripts
     @stack('script')
